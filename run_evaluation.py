@@ -28,8 +28,8 @@ Note:
     LLM calls (retrieval, generation, verification). On an RTX 3000 8GB,
     expect ~2-5 seconds per question.
 
-Author: Stanley
-Project: MSc Data Science, City University of London (DAM190)
+Author: Stanley Chong
+Project: MSc Computer Science, City University of London (DAM190)
 """
 
 import json
