@@ -1,0 +1,27 @@
+# SafeMD - Clinical AI Dependencies
+# Tested with Python 3.10+
+
+# --- Agent Orchestration (LangGraph) ---
+langgraph>=0.2.0
+langchain>=0.2.0
+langchain-core
+langchain-ollama
+
+# --- RAG & Vector Search (LlamaIndex) ---
+llama-index-core>=0.10.0
+llama-index-llms-ollama
+llama-index-embeddings-ollama
+llama-index-readers-file
+llama-index
+
+# --- Structured Output & Validation ---
+pydantic>=2.0.0
+
+# --- Data Analysis & Visualization ---
+pandas
+matplotlib
+numpy
+
+# --- Optional: API Server ---
+# fastapi
+# uvicorn

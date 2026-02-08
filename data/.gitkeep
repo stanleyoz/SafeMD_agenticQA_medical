@@ -1,0 +1,4 @@
+# Place your clinical guideline PDFs here
+# Example: NICE_NG28_2022.pdf (Type 2 Diabetes guidelines)
+#
+# After adding PDFs, run: python ingest_data.py

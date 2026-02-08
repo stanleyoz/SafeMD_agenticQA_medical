@@ -1,0 +1,49 @@
+{
+  "overall": {
+    "total_queries": 50,
+    "avg_latency_s": 2.38,
+    "median_latency_s": 2.32,
+    "min_latency_s": 0.96,
+    "max_latency_s": 5.46,
+    "avg_revisions": 1.02
+  },
+  "by_category": {
+    "Retrieval": {
+      "n": 20,
+      "avg_latency_s": 2.12,
+      "std_latency_s": 0.65,
+      "avg_revisions": 1.0
+    },
+    "Synthesis": {
+      "n": 15,
+      "avg_latency_s": 2.86,
+      "std_latency_s": 1.02,
+      "avg_revisions": 1.07
+    },
+    "Trap": {
+      "n": 15,
+      "avg_latency_s": 2.25,
+      "std_latency_s": 0.56,
+      "avg_revisions": 1.0
+    }
+  },
+  "revision_distribution": {
+    "1": 49,
+    "2": 1
+  },
+  "trap_analysis": {
+    "total": 15,
+    "safe_refusal": 7,
+    "safe_warning": 8,
+    "total_safe": 15,
+    "potential_miss": 0,
+    "safety_rate_pct": 100.0,
+    "critic_corrections_triggered": 0,
+    "silent_critic_rate_pct": 100.0
+  },
+  "key_findings": {
+    "safety_parity_achieved": true,
+    "safety_by_refusal_validated": true,
+    "architecture_over_scale": true
+  }
+}
