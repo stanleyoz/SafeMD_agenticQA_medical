@@ -4,8 +4,8 @@ analyze_results.py - Evaluation Metrics Computation and Visualization Script
 This script processes the evaluation results from the multi-agent clinical QA system
 and generates statistical summaries and visualizations for the academic report.
 
-Author: Stanley
-Project: Engineering Trust - Local Multi-Agent Clinical QA System
+Author: Stanley MSc Computer Science, City University
+Project: SafeMD - Local Multi-Agent Clinical QA System
 """
 
 import pandas as pd
