@@ -10,10 +10,6 @@ What it does:
     2. Chunks the documents into searchable segments
     3. Creates vector embeddings using nomic-embed-text (via Ollama)
     4. Persists the index to 'storage/' for later use
-
-The vector store enables "semantic search" - finding text chunks that are
-conceptually similar to a query, not just keyword matching.
-
 Usage:
     1. Place your PDF files (e.g., NICE NG28 guidelines) in the 'data/' folder
     2. Run: python ingest_data.py
@@ -23,8 +19,8 @@ Requirements:
     - Ollama running with nomic-embed-text and llama3.1:8b models pulled
     - PDF files in the 'data/' directory
 
-Author: Stanley
-Project: MSc Data Science, City University of London (DAM190)
+Author: Stanley Chong
+Project: MSc Computer Science, City University of London (DAM190)
 """
 
 import os
@@ -36,7 +32,7 @@ from llama_index.llms.ollama import Ollama
 # CONFIGURATION: Set up embedding and LLM models
 # ============================================================================
 # nomic-embed-text: A compact embedding model (768 dimensions) that runs
-# efficiently on consumer GPUs with 8GB VRAM. Good quality for its size.
+# efficiently on consumer GPUs with 8GB VRAM.
 Settings.embed_model = OllamaEmbedding(model_name="nomic-embed-text")
 
 # llama3.1:8b: Used during indexing for any LLM-based processing
