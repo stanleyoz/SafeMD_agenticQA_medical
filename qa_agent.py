@@ -8,10 +8,6 @@ a Directed Cyclic Graph (DCG) using LangGraph to orchestrate three AI agents:
     2. Clinician - Drafts answers based on retrieved context
     3. Critic    - Verifies safety and can reject unsafe drafts
 
-The key innovation is the safety loop: if the Critic detects a safety issue
-(e.g., recommending a drug that's unsafe for the patient), it sends the draft
-back to the Clinician for revision. This happens up to 3 times max.
-
 Usage:
     python qa_agent.py                           # Run with default test query
     python qa_agent.py "Your clinical query"    # Run with custom query
@@ -21,7 +17,8 @@ Requirements:
     - Vector store in ./storage/ (created by ingest_data.py)
 
 Author: Stanley
-Project: MSc Data Science, City University of London (DAM190)
+Project: MSc Computer Science, City University of London (DAM190)
+Supervisor : Dr Amen Bakhtiar
 """
 
 import operator
@@ -41,8 +38,7 @@ from llama_index.llms.ollama import Ollama
 # ============================================================================
 # CONFIGURATION: Set up the embedding and LLM models via Ollama
 # ============================================================================
-# We use nomic-embed-text for embeddings (768 dimensions, fast, runs on 8GB GPU)
-# and llama3.1:8b for text generation (good balance of quality vs speed)
+# We use nomic-embed-text for embeddings and llama3.1:8b for text generation 
 Settings.embed_model = OllamaEmbedding(model_name="nomic-embed-text")
 Settings.llm = Ollama(model="llama3.1:8b")
 
@@ -50,8 +46,6 @@ Settings.llm = Ollama(model="llama3.1:8b")
 # LOAD THE VECTOR INDEX (Created by ingest_data.py)
 # ============================================================================
 # The index contains embedded chunks from the NICE NG28 diabetes guidelines.
-# We use similarity_top_k=3 to retrieve the 3 most relevant chunks per query.
-# Why k=3? Testing showed: k=1 misses important info, k=5+ confuses the model.
 try:
     storage_context = StorageContext.from_defaults(persist_dir="./storage")
     real_index = load_index_from_storage(storage_context)
